@@ -12,12 +12,12 @@ export const ChatLink = styled(Link)`
     box-sizing: border-box;
     text-decoration: none;
     color: #fff;
-    background: ${props => props.active ? '#1374c1' : '#720064'};
+    background: ${props => props.active ? '#1371c16b' : '#720064'};
     border: none;
     outline: none;
     
     &:hover {
         cursor: pointer;
-        background: ${props => props.active ? '#1374c1' : '#8c408ac4'};
+        background: ${props => props.active ? '#1371c16b' : '#8c408ac4'};
     }
 `

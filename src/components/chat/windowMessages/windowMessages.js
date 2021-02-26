@@ -7,10 +7,11 @@ import RedactMessage from './redactMessage/redactMessage';
 const Window = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 65vh;
-    padding: 20px 0;
+    background: #f5f2f5;
+    height: calc(95vh - 220px);
+    padding-top: 20px;
     position: relative;
+    border-bottom: 1px solid #80808099;
     overflow: auto;
     ::-webkit-scrollbar { 
         width: 0;
@@ -38,32 +39,26 @@ const WindowMessages = (props) => {
             <Message
                 key={message.id}
                 message={message}
-                chooseMessage={props.chooseMessage}
-                selectedMessage={props.selectedMessage}
+                setMessage={props.setMessage}
+                editMessage={props.editMessage}
+                setRedactMessage={props.setRedactMessage}
+                deleteMessage={props.deleteMessage}
             />
         )
     })
 
     return (
         <Window>
-            { props.selectedMessage ?
-                <EditMessage
-                    selectedMessage={props.selectedMessage}
-                    setRedactMessage={props.setRedactMessage}
-                    deleteMessage={props.deleteMessage}
-                /> :
-                null
-            }
             {messages}
-            { props.redactMessage ?
-                <RedactMessage
-                    message={props.redactMessage}
-                    editMessage={props.editMessage}
-                    closeEditMessage={props.closeEditMessage}
-                    saveEditMessage={props.saveEditMessage}
-                /> :
-                null
-            }
+            {/*{ props.redactMessage ?*/}
+            {/*    <RedactMessage*/}
+            {/*        message={props.redactMessage}*/}
+            {/*        editMessage={props.editMessage}*/}
+            {/*        closeEditMessage={props.closeEditMessage}*/}
+            {/*        saveEditMessage={props.saveEditMessage}*/}
+            {/*    /> :*/}
+            {/*    null*/}
+            {/*}*/}
         </Window>
     )
 }

@@ -4,7 +4,8 @@ import { ChatLink } from '../../ui/links';
 
 const Chats = styled.div`
     font-size: 18px;
-    padding: 10px 20px;   
+    padding: 10px 20px; 
+    border-bottom: 1px solid #80808099;  
 `
 
 const ListChats = (props) => {

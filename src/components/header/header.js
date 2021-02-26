@@ -11,7 +11,8 @@ const HeaderNetwork = styled.header`
     background: #720064;
     padding: 0 20px 0 10px;
     color: white;
-    border-bottom: 1px solid grey;
+    border-radius: 0 10px 0 0;
+    border-bottom: 1px solid #80808099;
 `
 const Network = styled.div`
     font-size: 28px;
@@ -35,7 +36,7 @@ const UserName = styled.div`
 const Header = () => {
     return (
         <HeaderNetwork>
-            <Network>Корпоративная сеть</Network>
+            <Network>Чаты компании</Network>
             <Profile>
                 <UserName>Aleksandr Bogatov</UserName>
                 <HeaderButton>

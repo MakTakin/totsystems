@@ -7,30 +7,32 @@ import sendImg from '../../../assets/images/sendButton2.png'
 const Form = styled.form`
     display: flex;
     align-items: flex-end;
+    height: 50px;
+    background: #fff;
     border: 1px solid grey;
     border-radius: 5px;
-    margin: 0 20px;
+    margin: auto 20px 20px 20px;
     padding: 10px 5px;
 `
 
 
 const TextField = (props) => {
-    const [message, setMessage] = useState('')
-
-    const addMessage = (e) => {
-        e.preventDefault()
-        props.addNewMessage(message)
-        setMessage('')
-    }
+    // const [message, setMessage] = useState('')
+    //
+    // const addMessage = (e) => {
+    //     e.preventDefault()
+    //     props.addNewMessage(message)
+    //     setMessage('')
+    // }
 
     return (
-        <Form onSubmit={(e) => addMessage(e)}>
+        <Form onSubmit={(e) => props.addMessage(e)}>
             <InputText
                 placeholder='Send message'
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={props.message}
+                onChange={(e) => props.setMessage(e.target.value)}
             />
-            <SendButton active={message} type="submit">
+            <SendButton active={props.message} type="submit">
                 <img src={sendImg} alt="sendMessage"/>
             </SendButton >
         </Form>

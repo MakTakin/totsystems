@@ -36,8 +36,3 @@ export const EditButton = styled.button`
         background: #03a9f4;
     } 
 `
-
-export const EditButtonText = styled(EditButton)`
-    margin: 5px 0;
-    padding: 5px;
-`

@@ -8,7 +8,7 @@ const Logotip = styled.div`
     height: 50px;
     font-size: 28px;
     font-weight: bold; 
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #80808099;
 `
 const Logo = () => {
     return (

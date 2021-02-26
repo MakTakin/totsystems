@@ -5,7 +5,8 @@ const Header = styled.div`
     font-size: 18px;
     font-weight: bold;
     padding:10px 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #80808099;
+    background: #fff;
 `
 const HeaderChat = ({name}) => {
     return (

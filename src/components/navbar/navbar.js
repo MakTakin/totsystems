@@ -9,6 +9,7 @@ const Nav = styled.nav`
     background: #720064;
     font-size: 14px;
     color: white;
+    border-radius: 5px 0 0 5px;s
 `
 
 const NavBar = (props) => {
