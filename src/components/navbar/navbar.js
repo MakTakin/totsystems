@@ -1,11 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
+import Logo from './logo/logo';
+import ListChats from './listChats/listChats';
 
-const Component = () => {
+const Nav = styled.nav`
+    display: flex;
+    flex-direction: column;
+    background: #720064;
+    font-size: 14px;
+    color: white;
+`
+
+const NavBar = (props) => {
     return (
-        <div>
-            Awesome component
-        </div>
+        <Nav>
+            <Logo/>
+            <ListChats
+                chats={props.chats}
+                setChats={props.setChats}
+                changeChat={props.changeChat}
+            />
+        </Nav>
     )
 }
-export default Component
+export default NavBar

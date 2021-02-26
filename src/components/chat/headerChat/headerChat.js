@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Component = () => {
+const Header = styled.div`
+    font-size: 18px;
+    font-weight: bold;
+    padding:10px 20px;
+    border-bottom: 1px solid grey;
+`
+const HeaderChat = ({name}) => {
     return (
-        <div>
-            Awesome component
-        </div>
+        <Header>
+            {name}
+        </Header>
     )
 }
-export default Component
+export default HeaderChat
