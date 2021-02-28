@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../../../assets/images/logo.png'
 
 const Logotip = styled.div`
     display: flex;
@@ -13,7 +14,8 @@ const Logotip = styled.div`
 const Logo = () => {
     return (
         <Logotip>
-            Логотип
+            <img src={logo} alt="logotip"/>
+            Network
         </Logotip>
     )
 }

@@ -5,7 +5,6 @@ import Chat from './components/chat/chat';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import { mockChats } from './constants/constants';
-import { v4 as uuid } from 'uuid';
 
 const Container = styled.div`
     max-width: 1200px;
@@ -30,6 +29,8 @@ const Main = styled.div`
 function App() {
     const [chats, setChats] = useState(mockChats)
     const [activeChat, setActiveChat] = useState(mockChats[0])
+    const [message, setMessage] = useState('')
+    const [redactMessage, setRedactMessage] = useState(null)
 
     const changeChat = (id) => {
         const changeChats = [...chats]
@@ -43,6 +44,8 @@ function App() {
             }
         })
         setChats(changeChats)
+        setMessage('')
+        setRedactMessage('')
     }
 
     return (
@@ -59,8 +62,12 @@ function App() {
                            render={() => <Chat
                                activeChat={activeChat}
                                setActiveChat={setActiveChat}
+                               message={message}
+                               setMessage={setMessage}
                                chats={chats}
-                               setChats={setChats}/>
+                               setChats={setChats}
+                               redactMessage={redactMessage}
+                               setRedactMessage={setRedactMessage}/>
                            }
                     />
                     <Redirect to='/'/>

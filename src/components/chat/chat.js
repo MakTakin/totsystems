@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import WindowMessages from './windowMessages/windowMessages';
 import TextField from './textField/textField';
 import HeaderChat from './headerChat/headerChat';
 import { v4 as uuid } from 'uuid';
 
-const Chat = ({activeChat, setActiveChat,chats, setChats}) => {
-    const [redactMessage, setRedactMessage] = useState(null)
-    const [message, setMessage] = useState('')
-
+const Chat = ({activeChat, setActiveChat, chats, setChats, message, setMessage, redactMessage, setRedactMessage}) => {
     const addMessage = (e) => {
         e.preventDefault()
         let messages
@@ -36,6 +33,12 @@ const Chat = ({activeChat, setActiveChat,chats, setChats}) => {
         setMessage('')
     }
 
+    const submitEnter = (e) => {
+        if (e.code === 'Enter') {
+            addMessage(e)
+        }
+    }
+
     const deleteMessage = (id) => {
         const messages = activeChat.messages.filter(message => message.id !== id)
         const deletedActiveChatMessage = { ...activeChat, messages }
@@ -54,6 +57,7 @@ const Chat = ({activeChat, setActiveChat,chats, setChats}) => {
 
     const closeEditMessage = () => {
         setRedactMessage(null)
+        setMessage('')
     }
 
 
@@ -64,8 +68,8 @@ const Chat = ({activeChat, setActiveChat,chats, setChats}) => {
             />
             <WindowMessages
                 messages={activeChat.messages}
-                redactMessage={redactMessage}
                 setMessage={setMessage}
+                redactMessage={redactMessage}
                 setRedactMessage={setRedactMessage}
                 deleteMessage={deleteMessage}
                 editMessage={editMessage}
@@ -75,6 +79,9 @@ const Chat = ({activeChat, setActiveChat,chats, setChats}) => {
                 addMessage={addMessage}
                 message={message}
                 setMessage={setMessage}
+                submitEnter={submitEnter}
+                redactMessage={redactMessage}
+                closeEditMessage={closeEditMessage}
             />
         </>
     )

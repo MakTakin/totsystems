@@ -3,7 +3,7 @@ export const mockChats = [
         name: 'general',
         id: 1,
         active: true,
-        to: '/1',
+        to: '/general',
         messages: [
             {
             id: 1,

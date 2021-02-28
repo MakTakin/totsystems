@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Message from './message/message';
-import EditMessage from './editMessage/editMessage';
-import RedactMessage from './redactMessage/redactMessage';
 
 const Window = styled.div`
     display: flex;
     flex-direction: column;
     background: #f5f2f5;
-    height: calc(95vh - 220px);
+    height: calc(95vh - 245px);
     padding-top: 20px;
     position: relative;
     border-bottom: 1px solid #80808099;
@@ -50,15 +48,6 @@ const WindowMessages = (props) => {
     return (
         <Window>
             {messages}
-            {/*{ props.redactMessage ?*/}
-            {/*    <RedactMessage*/}
-            {/*        message={props.redactMessage}*/}
-            {/*        editMessage={props.editMessage}*/}
-            {/*        closeEditMessage={props.closeEditMessage}*/}
-            {/*        saveEditMessage={props.saveEditMessage}*/}
-            {/*    /> :*/}
-            {/*    null*/}
-            {/*}*/}
         </Window>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { EditButton } from '../../../ui/buttons';
-import EditMessage from '../editMessage/editMessage';
 
 const Edit = styled.div`
     justify-content: flex-end;
@@ -28,13 +27,12 @@ const MessageContainer = styled.div`
         }
     }
 `
+
 const Name = styled.div`
     font-weight: bold;
 `
 
 const Text = styled.div``
-
-
 
 const Message = ({ message, editMessage, deleteMessage }) => {
     return (
@@ -60,8 +58,6 @@ const Message = ({ message, editMessage, deleteMessage }) => {
                 </Edit> :
                 null
             }
-
-
         </MessageContainer>
     )
 }
